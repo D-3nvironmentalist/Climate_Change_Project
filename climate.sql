@@ -1,0 +1,1 @@
+SELECT COUNT('Year') FROM public."Carbon_Dioxide"
