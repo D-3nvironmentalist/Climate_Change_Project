@@ -38,28 +38,17 @@
 
              Plotly.plot("pie", pieData, pieLayout);
 
-        // create bubble chart
-        let bubbleLayout = {
-          xaxis:{title: "Average"},
-          height: 600,
-          width: 1000
-      };
+        // create line chart
       
-          let bubbleData = [
+          let scatterData = [
             {
               x: Year,
               y: Average,
-              text: Average,
-              mode: "markers",
-              marker: {
-                size: Year,
-                color: Average,
-                colorscale: "Earth"
-              }
+              type: "scatter"
             }
           ];
       
-          Plotly.plot("bubble", bubbleData, bubbleLayout);
+          Plotly.plot("scatter", scatterData);
 
         //   create bar graph
         var barData = [{
