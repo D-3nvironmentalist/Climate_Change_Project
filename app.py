@@ -9,7 +9,11 @@ from flask import Flask, jsonify,render_template
 #################################################
 # Database Setup
 #################################################
+<<<<<<< HEAD
 rds_connection_string = 'postgres:postgres@localhost:5432/climateChange'
+=======
+rds_connection_string = 'postgres:5Skurlalane!@localhost:5432/climateChange'
+>>>>>>> 909c0338587b77725b962d53148f5daa29d3d9ae
 engine = create_engine(f'postgresql://{rds_connection_string}')
 
 # reflect an existing database into a new model
