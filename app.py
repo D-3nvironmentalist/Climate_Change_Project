@@ -3,12 +3,13 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify,render_template
+
 
 #################################################
 # Database Setup
 #################################################
-rds_connection_string = 'postgres:password!@localhost:5432/climateChange'
+rds_connection_string = 'postgres:postgres@localhost:5432/climateChange'
 engine = create_engine(f'postgresql://{rds_connection_string}')
 
 # reflect an existing database into a new model
@@ -33,8 +34,28 @@ zonal_annual_means_tb = Base.classes.Zonal_Annual_Means
 #################################################
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-@app.route("/seaLevel")
+@app.route("/carbon-dioxide")
+def carbon():
+    return render_template("carbondioxide.html")
+
+@app.route("/sea-level")
+def sea():
+    return render_template("sealevel.html")
+
+@app.route("/zonal-means")
+def zonal():
+    return render_template("zonalmeans.html")
+
+@app.route("/arctic-ice")
+def artic():
+    return render_template("articice.html")
+
+
+@app.route("/api/seaLevel")
 def seaLevel():
     # Create our session (link) from Python to the DB
     session = Session(engine)
@@ -60,7 +81,7 @@ def seaLevel():
     return jsonify(seaLevel_arr)
 
 
-@app.route("/arcticIce")
+@app.route("/api/arcticIce")
 def arctic_Ice():
     # Create our session (link) from Python to the DB  
     #Does each app route require individual sessions?
@@ -83,7 +104,7 @@ def arctic_Ice():
 
     return jsonify(arcticIce_arr)
 
-@app.route("/carbonDioxide")
+@app.route("/api/carbondioxide")
 def carbon_Dioxide():
     # Create our session (link) from Python to the DB  
     #Does each app route require individual sessions?
@@ -108,7 +129,7 @@ def carbon_Dioxide():
 
     return jsonify(carbon_dioxide_arr)
 
-@app.route("/zonalMeans")
+@app.route("/api/zonalMeans")
 def zonal_Means():
     # Create our session (link) from Python to the DB  
     #Does each app route require individual sessions?

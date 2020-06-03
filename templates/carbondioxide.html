@@ -36,7 +36,7 @@
               </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="articice.html">Arctic Sea Ice Minimum </a>
-                        <a class="dropdown-item" href="carbondioxide.html">Carbon Dioxide Levels</a>
+                        <a class="dropdown-item" href="carbon-dioxide">Carbon Dioxide Levels</a>
                         <a class="dropdown-item" href="sealevel.html">Sea Level Measurements</a>
                         <a class="dropdown-item" href="zonalmeans.html">Zonal Mean Temperature</a>
                     </div>
@@ -97,7 +97,8 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./assets/js/carbondioxode.js"></script>
+    <!-- <script src="./assets/js/carbondioxode.js"></script> -->
+    <script src="{{ url_for('static', filename='js/carbondioxide.js') }}"></script>
 </body>
 
 </html>
