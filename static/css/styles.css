@@ -1,4 +1,11 @@
 body {
     background: skyblue;
     color: #333;
+    padding-left: 50px;
+    padding-right: 50px;
 }
+
+/* #jumbotron {
+    padding-left: 20px;
+    padding-right: 20px;
+} */
