@@ -1,82 +1,107 @@
- console.log("hello world")
-url = "/api/carbondioxide"
+// create a function to build plots
+ function initLine() {
+  
+  url = "/api/carbondioxide"
 
-
+  d3.json(url).then((carbonData) => {
     
-    // Load Data from csv
-    d3.json(url).then(function(carbonData){
-        
-        // var yearParser = d3.timeParse("%Y");
-        // var monthParser = d3.timeParse("%B");
-      // console.log(carbonData)
-        
+    //  console.log(carbonData)
 
-        var Year = carbonData.map(data => +data.Year);
+    var Year = carbonData.map(data => +data.Year);
         console.log(Year)
-        var Months = carbonData.map(data => +data.Months);
+    var Months = carbonData.map(data => +data.Months);
         // console.log(Months)
-        var Interpolated = carbonData.map(data => +data.interpolated);
+    var Interpolated = carbonData.map(data => +data.interpolated);
         // console.log(Interpolated)
-        var Average = carbonData.map(data => +data.average);
+    var Average = carbonData.map(data => +data.Average);
         // console.log(Average)
-        var Trends = carbonData.map(data => +data.trend_season_corr);
+    var Trends = carbonData.map(data => +data.trend_season_corr);
         // console.log(Trends)
 
-        //create pie graph 
-        var pieLayout = {
-            margin: { t: 0, l: 0 }
-          };
-          
-
-        var pieData = [
-            {
-              values: Average,
-              labels: Year,
-              hovertext: Months,
-              hoverinfo: "hovertext",
-              type: "pie"
-            }
-          ];
-
-             Plotly.plot("pie", pieData, pieLayout);
-
-//         // create line chart
-      
-//           let scatterData = [
-//             {
-//               x: Year,
-//               y: Average,
-//               type: "scatter"
-//             }
-//           ];
-      
-//           Plotly.plot("scatter", scatterData);
-
-//         //   create bar graph
-//         var barData = [{
-//             x: Year,
-//             y: Average,
-//             text: Months,
-//             marker: {
-//               color: 'rgb(142,124,195)'},
-//             type:"bar",
-//             orientation: "h",
-//         }];
-
-//         var barLayout = {
-//             title: "Average",
-//             yaxis:{
-//                 tickmode:"linear",
-//             },
-//             margin: {
-//                 l: 100,
-//                 r: 100,
-//                 t: 100,
-//                 b: 30
-//             }
-//         };
+        // create Line chart 1 
+  var lineData = [
+    {
+        type: "scatter",
+        mode: "lines+markers",
+        name: "Average C02",
+        x: Year,
+        y: Average,
+        text: Months,
+        line: {
+          color: "green",
+          width: 4
+        }
   
-//         // create the bar plot
-//         Plotly.newPlot("bar", barData, barLayout);
-    });
+    }
+  ];
 
+  var layout = {
+    title: "Carbon Dioxide Levels over the years",
+    xaxis: { title: "Years" },
+    yaxis: { title: "Carbon Dioxide (ppm)" }
+  };
+
+
+  Plotly.newPlot("plot", lineData, layout);
+
+  });
+
+};
+
+// Call updatePlotly() when a change takes place to the DOM
+// d3.selectAll("#selDataset").on("change", updatePlotly);
+
+// function updatePlotly(carbon) {
+
+//   // Use D3 to select the drop down menu 
+//   var dropdownMenu=d3.select("#selDataet");
+
+//   // Assign the value of the dropdown menu to a variable 
+//   var dataset = dropdownMenu.property("value");
+
+//   d3.json(url).then((carbonData) => {
+    
+//     //  console.log(carbonData)
+
+//     var Year = carbonData.map(data => +data.Year);
+//         // console.log(Year)
+//     var Months = carbonData.map(data => +data.Months);
+//         // console.log(Months)
+//     var Interpolated = carbonData.map(data => +data.interpolated);
+//         // console.log(Interpolated)
+//     var Average = carbonData.map(data => +data.Average);
+//         // console.log(Average)
+//     var Trends = carbonData.map(data => +data.trend_season_corr);
+//         // console.log(Trends)
+
+//     // Initialize X and Y arrays
+//     var x = [];
+//     var y = [];
+
+//     if  (dataset === 'Average') {
+//       x: Year;
+//       y: Average;
+//     }
+
+//     else if  (dataset === 'Trends') {
+//       x: Year;
+//       y: Trends;
+//     }
+
+//     else if  (dataset === 'Interpolated') {
+//       x: Year;
+//       y: Interpolated;
+//     };
+
+//     var layout = {
+//       tittle: `${carbon} over the years`
+//     }
+
+//     Plotly.restyle("plot", "x", [x], layout);
+//     Plotly.restyle("plot", "y", [y], layout);
+//     Plotly.restyle("plot", "y", [y], layout);
+
+//   });
+// }
+
+initLine();
