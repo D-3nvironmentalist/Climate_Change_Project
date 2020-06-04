@@ -9,7 +9,7 @@ from flask import Flask, jsonify,render_template
 #################################################
 # Database Setup
 #################################################
-rds_connection_string = 'postgres:postgres@localhost:5432/climateChange'
+rds_connection_string = 'postgres:5Skurlalane!@localhost:5432/climateChange'
 engine = create_engine(f'postgresql://{rds_connection_string}')
 
 # reflect an existing database into a new model
@@ -129,7 +129,7 @@ def carbon_Dioxide():
 
     return jsonify(carbon_dioxide_arr)
 
-@app.route("/api/zonalMeans")
+@app.route("/api/zonalmeans")
 def zonal_Means():
     # Create our session (link) from Python to the DB  
     #Does each app route require individual sessions?

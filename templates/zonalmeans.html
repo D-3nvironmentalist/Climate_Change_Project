@@ -38,7 +38,7 @@
                         <a class="dropdown-item" href="/arctic-ice">Arctic Sea Ice Minimum </a>
                         <a class="dropdown-item" href="/carbon-dioxide">Carbon Dioxide Levels</a>
                         <a class="dropdown-item" href="/sea-level">Sea Level Measurements</a>
-                        <a class="dropdown-item" href="/zonal-means">Zonal Mean Temperature</a>
+                        <a class="dropdown-item" href="/zonal-means">Zonal Mean Temperatures</a>
                     </div>
                 </li>
 
@@ -64,8 +64,10 @@
         <div class="col-md-8">
 
             <div class="jumbotron" style="background-color: white;">
-                <h1 class="display-4" style="color: #333;"> Zonal Mean Temperature</h1>
-                <p>chart</p>
+                <h1 class="display-4" style="color: #333;"> Zonal Mean Temperatures</h1>
+                <div class="col-md-12">
+                    <div id="plot"></div>
+                </div>
                 <p>Description</p>
             </div>
 
@@ -74,6 +76,11 @@
     </div>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/zonalmeans.js') }}"></script>
+
 </body>
 
 </html>
