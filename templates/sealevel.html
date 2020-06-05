@@ -61,12 +61,14 @@
 
     <div class="row">
 
-        <div class="col-md-8">
+        <div class="col-md-12">
 
             <div class="jumbotron" style="background-color: white;">
-                <h1 class="display-4" style="color: #333;">Sea Level Measurements</h1>
-                <p>chart</p>
-                <p>Description</p>
+                <h1 class="display-4" style="color: #333;"> Sea Level Measurements</h1>
+                <div class="col-md-12">
+                    <div id="plot"></div>
+                </div>
+                <p>Sea level rise is caused primarily by two factors related to global warming: the added water from melting ice sheets and glaciers and the expansion of seawater as it warms. This graph tracks the change in sea level since 1993 as observed by satellites both utilizing and not utilizing GMSL. GMSL is the global mean sea level and is used to estimate an average level over the oceans.  It cannot be used to predict relative sea level changes along the coasts, however, so our graph shows both methods.</p>
             </div>
 
         </div>
@@ -74,6 +76,11 @@
     </div>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/sealevel.js') }}"></script>
+
 </body>
 
 </html>
