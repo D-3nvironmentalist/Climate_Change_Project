@@ -25,7 +25,7 @@
         mode: "lines+markers",
         name: "Average C02",
         x: Year,
-        y: Average,
+        y: Trends,
         text: Months,
         line: {
           color: "green",
