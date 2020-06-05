@@ -26,6 +26,8 @@ sea_level_tb = Base.classes.Sea_Level
 
 zonal_annual_means_tb = Base.classes.Zonal_Annual_Means
 
+global_anomalies_tb = Base.classes.Global_Anomalies
+
 
 
 
@@ -60,7 +62,7 @@ def seaLevel():
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
+   
     # Query all passengers
     results = session.query(sea_level_tb.Year, sea_level_tb.Number_of_Observations, sea_level_tb.GMSL_Not_Applied, sea_level_tb.StDev_of_GMSL_Not_Applied, sea_level_tb.StDev_of_GMSL_Applied, sea_level_tb.GMSL_Applied).all()
 
@@ -87,7 +89,29 @@ def arctic_Ice():
     #Does each app route require individual sessions?
     session = Session(engine)
 
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
+    
+    # Query all passengers
+    results = session.query(global_anomalies_tb.Year, global_anomalies_tb.Value_in_Celsius).all()
+
+    session.close()
+
+    # Create a dictionary from the row data and append to a list of all_passengers
+    global_anomalies_arr = []
+    for Year, Value_in_Celsius in results:
+        global_anomalies_dict = {}
+        global_anomalies_dict["Year"] = Year
+        global_anomalies_dict["Value_in_Celsius"] = Value_in_Celsius
+        global_anomalies_arr.append(global_anomalies_dict)
+
+    return jsonify(global_anomalies_arr)
+
+@app.route("/api/global-anamolies")
+def anamolies():
+    # Create our session (link) from Python to the DB  
+    #Does each app route require individual sessions?
+    session = Session(engine)
+
+    
     # Query all passengers
     results = session.query(arctic_ice_tb.Year, arctic_ice_tb.Extent, arctic_ice_tb.Area).all()
 
@@ -110,7 +134,7 @@ def carbon_Dioxide():
     #Does each app route require individual sessions?
     session = Session(engine)
 
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
+   
     # Query all passengers
     results = session.query(carbon_dioxide_tb.Year, carbon_dioxide_tb.Months, carbon_dioxide_tb.interpolated, carbon_dioxide_tb.Average, carbon_dioxide_tb.trend_season_corr).all()
 
@@ -135,7 +159,7 @@ def zonal_Means():
     #Does each app route require individual sessions?
     session = Session(engine)
 
-    """Return a list of passenger data including the name, age, and sex of each passenger"""
+    
     # Query all passengers
     results = session.query(zonal_annual_means_tb.Year, zonal_annual_means_tb.Glob, zonal_annual_means_tb.NHem, zonal_annual_means_tb.SHem, zonal_annual_means_tb.Hem_24N_90N, zonal_annual_means_tb.Hem_24S_24N, zonal_annual_means_tb.Hem_90S_24S, zonal_annual_means_tb.Hem_64N_90N, zonal_annual_means_tb.Hem_44N_64N, zonal_annual_means_tb.Hem_24N_44N, zonal_annual_means_tb.Hem_EQU_24N, zonal_annual_means_tb.Hem_24S_EQU, zonal_annual_means_tb.Hem_44S_24S, zonal_annual_means_tb.Hem_64S_44S, zonal_annual_means_tb.Hem_90S_64S).all()
 
