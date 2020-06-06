@@ -83,8 +83,8 @@ def seaLevel():
     return jsonify(seaLevel_arr)
 
 
-@app.route("/api/arcticIce")
-def arctic_Ice():
+@app.route("/api/global-anamolies")
+def anamolies():
     # Create our session (link) from Python to the DB  
     #Does each app route require individual sessions?
     session = Session(engine)
@@ -105,8 +105,8 @@ def arctic_Ice():
 
     return jsonify(global_anomalies_arr)
 
-@app.route("/api/global-anamolies")
-def anamolies():
+@app.route("/api/arcticIce")
+def arctic_Ice():
     # Create our session (link) from Python to the DB  
     #Does each app route require individual sessions?
     session = Session(engine)
