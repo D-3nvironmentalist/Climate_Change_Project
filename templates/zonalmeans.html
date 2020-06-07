@@ -74,7 +74,30 @@
         </div>
 
     </div>
+    <form class="form-inline">
+        <div class="form-group">
+            <select id="selHemisphere">
+                <option value="Hem_24N_90N">Hem_24N_90N</option>
+                <option value="Hem_24S_24N">Hem_24S_24N</option>
+                <option value="Hem_90S_24S">Hem_90S_24S</option>
+                <option value="Hem_64N_90N">Hem_64N_90N</option>
+                <option value="Hem_44N_64N">Hem_44N_64N</option>
+                <option value="Hem_24N_44N">Hem_24N_44N</option>
+                <option value="Hem_EQU_24N">Hem_EQU_24N</option>
+                <option value="Hem_24S_EQU">Hem_24S_EQU</option>
+                <option value="Hem_44S_24S">Hem_44S_24S</option>
+                <option value="Hem_64S_44S">Hem_64S_44S</option>
+                <option value="Hem_90S_64S">Hem_90S_64S</option>
+              </select>
+      </form>
+    </div>
 
+    <div class="jumbotron" style="background-color: white;">
+        <h1 class="display-4" style="color: #333;"> Mean Temperatures by Zone</h1>
+        <div class="col-md-12">
+            <div id="plot2"></div>
+        </div>
+        <p>Description</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
