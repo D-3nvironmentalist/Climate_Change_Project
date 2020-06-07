@@ -5,6 +5,15 @@ body {
     padding-right: 50px;
 }
 
+p {
+    text-align: center;
+}
+
+h2 {
+    font-weight: bolder;
+}
+
+
 /* #jumbotron {
     padding-left: 20px;
     padding-right: 20px;
