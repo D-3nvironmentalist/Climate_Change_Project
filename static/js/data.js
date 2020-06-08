@@ -3,24 +3,19 @@ function init() {
     url = "/api/carbondioxide"
   
     d3.json(url).then((carbonData) => {
-          console.log(carbonData)
           
           var Year = carbonData.map(data => +data.Year);
-          console.log(Year)
+          
           var Months = carbonData.map(data => +data.Months);
-          // console.log(Months)
+          
           var Interpolated = carbonData.map(data => +data.interpolated);
-          // console.log(Interpolated)
+          
           var Average = carbonData.map(data => +data.Average);
-          // console.log(Average)
+          
           var Trends = carbonData.map(data => +data.trend_season_corr);
-          // console.log(Trends)
-  
+            
           var columns = ["Year", "Months", "Interpolated", "Average", "Trends"]
-  
-          // appending to the html table
-          // var table = d3.select("table");
-  
+   
           var thead = d3.select("thead");
   
           var row = thead.append("tr");
@@ -50,8 +45,7 @@ function init() {
       url = "/api/arcticIce"
   
       d3.json(url).then((iceData) => {
-          console.log(iceData)
-  
+            
           var Area = iceData.map(data => +data.Area);
   
           var Extent = iceData.map(data => +data.Extent);
@@ -84,8 +78,7 @@ function init() {
       url = "/api/zonalmeans"
   
       d3.json(url).then((zonalData) => {
-          console.log(zonalData)
-  
+            
           var Glob = zonalData.map(data => +data.Glob)
   
           var Hem_24N_44N = zonalData.map(data => +data.Hem_24N_44N)
@@ -155,8 +148,7 @@ function init() {
       url = "/api/seaLevel"
   
       d3.json(url).then((seaData) => {
-          console.log(seaData)
-  
+            
           var GMSL_Applied = seaData.map(data => +data.GMSL_Applied);
   
           var GMSL_Not_Applied = seaData.map(data => +data.GMSL_Not_Applied);
@@ -172,9 +164,9 @@ function init() {
           var columns = ["GMSL Applied", "GMSL Not Applied", "Number Of Observations", 
           "StDev Of GMSL Applied","StDev Of GMSL Not Applied", "Year"]
   
-          var header = d3.selectAll("#datasetHeader")
+        //   var header = d3.selectAll("#datasetHeader")
   
-          header.append("h1").text("Sea Level")
+        //   header.append("h1").text("Sea Level")
   
           var thead = d3.select("thead");
   
@@ -197,6 +189,36 @@ function init() {
           };
       })
   };
+
+  function anomalies() {
+      url = "/api/global-anamolies"
+      d3.json(url).then((anomaliesData) => {
+                
+          var Value_in_Celsius = anomaliesData.map(data => +data.Value_in_Celsius)
+
+          var Year = anomaliesData.map(data => +data.Year)
+
+          var columns = ["Value in Celsius", "Year"]
+
+          var thead = d3.select("thead");
+  
+          var row = thead.append("tr");
+  
+          var tbody = d3.select("tbody")
+
+          for (var i = 0; i < columns.length; i++){
+            row.append("th").text(columns[i])
+          };        
+        
+          for (var i=0; i < anomaliesData.length; i++){
+            var row = tbody.append("tr");
+            row.append("td").text(Value_in_Celsius[i])
+            row.append("td").text(Year[i])
+          };
+
+
+      })
+  }
   
   d3.selectAll("#selDataset").on("change", updateTable)
   
@@ -220,6 +242,9 @@ function init() {
               break;
           case "Zonal Means":
               zonal();
+              break;
+          case "Global Anomalies":
+              anomalies();
               break;
       };
   
