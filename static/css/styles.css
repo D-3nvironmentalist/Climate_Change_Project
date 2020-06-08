@@ -13,9 +13,27 @@ h2 {
     font-weight: bolder;
 }
 
-h1 {
-    text-align: center;
+.for_slick_slider {
+    display: flex;
 }
+
+.for_slick_slider .items {
+    width: 250px;
+    height: 250px;
+    margin: 50px;
+}
+
+.for_slick_slider .items img {
+    width: 250px;
+    height: 250pxt;
+    margin: 50px;
+    transition: linear .4s;
+}
+
+.for_slick_slider .slick-center img {
+    transform: scale(1.2);
+}
+
 
 /* #jumbotron {
     padding-left: 20px;
