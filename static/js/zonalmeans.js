@@ -35,7 +35,7 @@ function builtPlot() {
     var layout = {
       title: "Global Annual Mean Temperatures",
       xaxis: { title: "Year" },
-      yaxis: { title: "Mean Temp"}
+      yaxis: { title: "Annual Mean Temperature"}
     };
   
   
@@ -78,6 +78,8 @@ function init() {
   var layout = {
       title: "Annual Mean Temperatures of Selected Zone",
       barmode: "group",
+      xaxis: {title: "Year"},
+      yaxis: {title: "Annual Mean Temperature"},
   };
   
   // Render the plot
