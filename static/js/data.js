@@ -15,6 +15,10 @@ function init() {
           var Trends = carbonData.map(data => +data.trend_season_corr);
             
           var columns = ["Year", "Months", "Interpolated", "Average", "Trends"]
+
+          var header = d3.selectAll("h1")
+  
+          header.text("Carbon Dioxide")
    
           var thead = d3.select("thead");
   
@@ -53,6 +57,10 @@ function init() {
           var Year = iceData.map(data => data.Year);
   
           var columns = ["Area", "Extent", "Year"];
+
+          var header = d3.selectAll("h1")
+  
+          header.text("Arctic Ice")
   
           var thead = d3.select("thead");
   
@@ -112,6 +120,10 @@ function init() {
           var columns = ["Glob", "Hem 24N 44N", "Hem 24N 90N", "Hem 24S 24N", "Hem 24S EQU", "Hem 44N 64N",
            "Hem 44S 24S", "Hem 64N 90N", "Hem 64S 44S", "Hem 90S 24S", "Hem 90S 64S", "Hem EQU 24N", "NHem",
             "SHem", "Year"];
+
+          var header = d3.selectAll("h1")
+  
+          header.text("Zonal Means")
   
           var thead = d3.select("thead");
   
@@ -164,9 +176,9 @@ function init() {
           var columns = ["GMSL Applied", "GMSL Not Applied", "Number Of Observations", 
           "StDev Of GMSL Applied","StDev Of GMSL Not Applied", "Year"]
   
-        //   var header = d3.selectAll("#datasetHeader")
+          var header = d3.selectAll("h1")
   
-        //   header.append("h1").text("Sea Level")
+          header.text("Sea Level")
   
           var thead = d3.select("thead");
   
@@ -198,7 +210,11 @@ function init() {
 
           var Year = anomaliesData.map(data => +data.Year)
 
-          var columns = ["Value in Celsius", "Year"]
+          var columns = ["Value in Celsius", "Year"];
+
+          var header = d3.selectAll("h1");
+  
+          header.text("Global Anomalies");
 
           var thead = d3.select("thead");
   
