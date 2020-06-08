@@ -56,6 +56,9 @@ def zonal():
 def artic():
     return render_template("articice.html")
 
+@app.route("/data")
+def data():
+    return render_template("data.html")
 
 @app.route("/api/seaLevel")
 def seaLevel():

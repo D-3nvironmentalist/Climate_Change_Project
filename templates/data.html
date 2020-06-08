@@ -60,13 +60,41 @@
 
         <div class="col-md-12">
 
+            
             <div class="jumbotron" style="background-color: white;">
-                <h1 class="display-4" style="color: #333;">Climate Change</h1>
-                <h2>The Planets Vital Signs</h2>
-                <p>The Earth's climate has changed throughout history. Just in the last 650,000 years there have been seven cycles of glacial advance and retreat, with the abrupt end of the last ice age about 11,700 years ago marking the beginning of the
-                    modern climate era — and of human civilization. Most of these climate changes are attributed to very small variations in Earth’s orbit that change the amount of solar energy our planet receives.
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="well">
+                        <h5>Choose New Dataset:</h5>
+                        <select id="selDataset" >
+                            <option value="Carbon Dioxide">Carbon Dioxide</option>
+                            <option value="Arctic Ice">Arctic Ice</option>
+                            <option value="Sea Level">Sea Level</option>
+                            <option value="Zonal Means">Zonal Means</option>
+                        </select> 
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="datasetHeader">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="table-area" class="table-responsive">
+                            <table id="data-table" class="table table-striped">
+                                <thead>
+                                  
+                                </thead> 
+                                <tbody>
 
-                </p>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
         </div>
@@ -75,7 +103,8 @@
 
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="{{ url_for('static', filename='js/data.js') }}"></script>
 </body>
 
 </html>
