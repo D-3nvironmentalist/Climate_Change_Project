@@ -7,18 +7,18 @@ We are in a grip of a climate crisis and we often think of climate change as a d
 ## Process
 
 To analyze and visualize this data both Python and JavaScript libraries were used. Pandas was imported onto Jupyter Notebook where the extracted data was transformed by dropping unecessary columns and by renaming those columns.
-* ![Rename Dropping Columns](Project-2/Static/Images/rename_columns.png) 
+* ![Rename Dropping Columns](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/rename_columns.png) 
 
 The data was then loaded onto a PostgreSQL database using SLQAlchemy.
-* ![SLQAlchemy](Project-2/Static/Images/SLQAlchemy.png) 
+* ![SLQAlchemy](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/SLQAlchemy.png) 
 
 Tables were created on the PostgreSQL database and further cleaning was performed using numerous SQL quieres with SELECT statements including the addition of Primary Keys. 
-* ![Tables_1](Project-2/Static/Images/Tables_1.png)
-* ![Tables_2](Project-2/Static/Images/Tables_2.png)
+* ![Tables_1](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Tables_1.png)
+* ![Tables_2](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Tables_2.png)
 
 A Python Flask App was then created where the data was Jsonified, RESTful APIs were created, and the data was rendered onto our HTML pages. 
-* ![Render_template](Project-2/Static/Images/Render_template.png)
-* ![Jsonify](Project-2/Static/Images/Jsonify.png)
+* ![Render_template](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Render_template.png)
+* ![Jsonify](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Jsonify.png)
 
 The HTML pages which includes dropdown menus, a carousel, and interactive visualizations of the data were created using CSS and JavaScript libraries such as Bootstrap, Plotly, D3, and Slick.
 
@@ -26,17 +26,17 @@ The HTML pages which includes dropdown menus, a carousel, and interactive visual
 **Each webpage visualizes its own finding from the data.**
 
 In the Carbon Data webpage it was found that one of the most obvious signals of climate change is the rise in global temperature anomalies over the past several decades correlates with the raise of Carbon Dioxide Levels in parts per million during that same time period. 
-* ![Carbon Anamolies Graph](Project-2/Static/Images/Carbon_Anamolies_Graph.png)
+* ![Carbon Anamolies Graph](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Carbon_Anamolies_Graph.png)
 
 It was concluded that for the Artic Ice webpage the amount of ice in the Arctic is diminishing every year as a consequence of global warming.
-* ![Artic_Ice_Levels](Project-2/Static/Images/Artic_Ice_Levels.png)
+* ![Artic_Ice_Levels](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Artic_Ice_Levels.png)
 
 The Sea Level webpage demonstrates that Sea Level rise is caused primarily by two factors related to global warming: the added water from melting ice sheets and glaciers and the expansion of seawater as it warms
-* ![Sea_level](Project-2/Static/Images/Sea_level.png)
+* ![Sea_level](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Sea_level.png)
 
 There were two visualizations on the Zonal Means webpage. The first visualization shows that the year 2016 ranks as the warmest on record.
-* ![Global_Mean_Temp](Project-2/Static/Images/Global_Mean_Temp.png)
+* ![Global_Mean_Temp](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Global_Mean_Temp.png)
 
 From the second visualization one could conclude that the effects of the widespread consumption of fossil fuels after the industrial revolution are most pronouned in the temperate regions, then the tropics, and lastly the polar regions.
-* ![Mean_Temp_Zone](Project-2/Static/Images/Mean_Temp_Zone.png)
+* ![Mean_Temp_Zone](/Users/CesarRodriguez/Desktop/BootCamp_HW/Project-2/Static/Images/Mean_Temp_Zone.png)
 
