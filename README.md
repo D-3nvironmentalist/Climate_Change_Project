@@ -45,3 +45,5 @@ From the second visualization one could conclude that the effects of the widespr
 
 * ![Mean_Temp_Zone](https://github.com/D-3nvironmentalist/Project-2/blob/master/static/Images/Mean_Temp_Zone.png)
 
+
+
